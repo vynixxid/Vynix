@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: #0d0d0d;
+  color: #ffffff;
+  overflow-y: auto;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar */
+.site-header {
+  background: #1a1a1a;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00f7ff;
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+}
+
+.navigation ul li {
+  margin-left: 20px;
+}
+
+.navigation ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navigation ul li a:hover {
+  color: #00f7ff;
+}
+
+/* Carousel */
+.trending-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 70px; /* Untuk memberi ruang pada navbar fixed */
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.carousel-caption h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #00f7ff;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #cccccc;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #00f7ff;
+  color: #0d0d0d;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 700;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #00d4d4;
+}
+
+/* Films Section */
+.films {
+  padding: 50px 0;
+}
+
+.films h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.film-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.film-card {
+  flex: 0 0 250px;
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+}
+
+.film-card:hover {
+  transform: scale(1.05);
+}
+
+.film-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.film-card .genre {
+  font-size: 14px;
+  color: #00f7ff;
+  margin-bottom: 10px;
+}
+
+.film-card p {
+  font-size: 14px;
+  color: #cccccc;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #1a1a1a;
+  margin-top: 50px;
+}
+
+.site-footer p {
+  font-size: 14px;
+  color: #cccccc;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .carousel-slide img {
+    height: 300px;
+  }
+
+  .carousel-caption h2 {
+    font-size: 20px;
+  }
+
+  .carousel-caption p {
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #1a1a1a;
+    padding: 10px;
+    display: none;
+  }
+
+  .navigation ul.active {
+    display: flex;
+  }
+
+  .navigation ul li {
+    margin: 10px 0;
+  }
+}
